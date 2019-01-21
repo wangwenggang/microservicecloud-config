@@ -6,6 +6,12 @@ spring:
 server:
   port: 8001
   
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+  
 spring:
   profiles: dev
   application: 
@@ -21,11 +27,7 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
 
       
 eureka:
@@ -33,7 +35,7 @@ eureka:
     service-url:
        defaultZone: http://eureka7001.com:7001/eureka/
     instane:
-       instane-id: dept-8001.com
+       instane-id: microservicecloud-dept8001
        prefer-ip-address: true 
 info: 
   app.name: atguigu-microservicecloud
@@ -44,6 +46,12 @@ info:
 
 server:
   port: 8001
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
   
 spring:
   profiles: test
@@ -61,18 +69,14 @@ spring:
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
       
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
       
 eureka:
   client:
     service-url:
        defaultZone: http://eureka7001.com:7001/eureka/
     instane:
-       instane-id: dept-8001.com
+       instane-id: microservicecloud-dept8001
        prefer-ip-address: true 
 info: 
   app.name: atguigu-microservicecloud
